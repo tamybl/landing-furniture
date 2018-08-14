@@ -1,10 +1,10 @@
 var slider,
   oBxSettings = { 
-    slideWidth: 260,
+    slideWidth: 270,
     minSlides: 3,
     maxSlides: 3,
     moveSlides: 1,
-    slideMargin: 30,
+    slideMargin: 20,
     controls: true,
     pager: false,
     auto: true,
@@ -16,14 +16,14 @@ var slider,
 function init() {
   // Set maxSlides depending on window width
   var containerSlidesWidth = $('.slider-products').width();
-  var numberSlides = Math.floor(containerSlidesWidth / 300);
+  var numberSlides = Math.floor(containerSlidesWidth / 200);
   console.log(numberSlides);
   oBxSettings.maxSlides = numberSlides;
 }
 
 function scrollDisplay (currentPosition) {
   var sectionPosition = $('section.living').offset().top;
-  var validator = sectionPosition < currentPosition ? $('.scroll-to-top').fadeIn() : $('.scroll-to-top').fadeOut();
+  sectionPosition < currentPosition ? $('.scroll-to-top').fadeIn() : $('.scroll-to-top').fadeOut();
 }
 
 $(document).ready(function() {

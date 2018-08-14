@@ -4,7 +4,7 @@ body {
 
 .landing-muebles {
   width: 100%;
-  background: #fff;
+  background-image: linear-gradient(to top, #dcdcdc 0%, #e2e2e2 1%, #f3f3f3 31%, #f3f3f3 75%, #ffffff 100%);
   /*font-family: 'Open Sans', sans-serif;*/
   font-family: 'Lato', sans-serif; 
 
@@ -42,8 +42,8 @@ body {
 
 
 .landing-muebles main.main-container {
-  max-width: 1250px;
-  width: 90%;
+  /* max-width: 1250px; */
+  width: 100%;
   margin: 0 auto;
   /* BORRAR */
   min-height: 100vh;
@@ -75,59 +75,21 @@ body {
   width: 100%;
 }
 
-.navigation .menu-link .submenu {
-  position: absolute;
-  opacity: 0;
-  left: 70px;
-  background: #fff;
-  color: #666;
-  min-width: 440px;
-  min-height: 240px;
-  background: url(../img/icon/bg_menu.jpg);
-  background-position: 0%;
-  /*border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;*/
-  border-radius: 10px;
-  font-size: 16px;
-  visibility: hidden;
-  transition: all ease 0.5s;
-  z-index: 100000;
 
-}
-
-.navigation .menu-link .submenu ul {
-  list-style-type: none;
-}
-
-.navigation .menu-link .submenu::before {
-  content: '';
-  width: 10px;
-  height: 10px;
-  box-sizing: border-box;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right: 10px solid #fff;
-  background: transparent;
-  position: absolute;
-  left: -10px;
-  top: 10px;
-}
-
-
-.navigation .menu-link:hover .submenu {
-  left: 85px;
-  opacity: 1;
-  visibility: visible;
-}
 
 
 
 .navigation .menu-link .icon {
   width: 40px;
   height:40px;
+  display: block;
   /*background: #fff;*/
   margin: 0 auto;
+  text-decoration: none;
+}
+
+.navigation .menu-link .icon span {
+
 }
 
 .navigation .menu-link .icon img {
@@ -141,13 +103,46 @@ body {
   min-height: 100px;
 }
 
-.landing-muebles main.main-container .title {
+.landing-muebles .title-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 230px;
+  width: 100%;
+  max-width: 1920px;
+  background: #cbbcb9;
+  margin: 50px auto;
+  position: relative;
+}
+.landing-muebles .title {
   text-align: center;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.landing-muebles main.main-container .title span {
+.landing-muebles .title-container .icon {
+  position: absolute;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  bottom: -30px;
+  border: 3px solid #b1a4a2;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #cbbcb9;
+}
+
+.landing-muebles .title-container .icon img {
+  max-width: 100%;
+}
+
+.landing-muebles .title span {
   margin: 0 auto;
-  font-size: 28px;
+  font-size: 40px;
   font-weight: 700;
 }
 
@@ -164,7 +159,7 @@ body {
   display: grid;
   grid-template-columns: .33fr .67fr;
   grid-template-rows: repeat(3, auto);
-  grid-gap: 30px;
+  grid-gap: 15px;
   align-content: space-around;
   justify-content: space-between;
   overflow: hidden;
@@ -324,15 +319,27 @@ body {
 }
 
 .landing-muebles main.main-container section.comedores {
-  border: 8px solid #ccc;
-  /*max-width: 1154px;*/
+  /* border: 3px solid #ccc; */
+  max-width: 1140px;
   margin: 20px auto;
+  position: relative;
+}
+
+.landing-muebles main.main-container section.comedores .bx-wrapper {
+  background: transparent;
+}
+
+.landing-muebles main.main-container section.comedores::after {
+  content: "";
+  width: 300px;
+  height: 200px;
+  display: block;
+  position: absolute;
+  background: #ca3580;
 }
 
 .landing-muebles main.main-container .comedor-row {
-  display: grid;
-  grid-template-columns: 330px 1fr;
-  grid-template-rows: auto auto;
+
 }
 
 .landing-muebles main.main-container .comedor-row .description {
@@ -343,6 +350,11 @@ body {
 .landing-muebles main.main-container .comedor-row .slider-products {
   margin-bottom: 40px;
 
+}
+
+.landing-muebles main.main-container .comedor-row .slider-products .detail-product {
+  border-top: 1px solid #f3f3f3;
+  padding: 2px;
 }
 
 .landing-muebles main.main-container .comedor-row .slider-products .detail-product h3 {
@@ -359,6 +371,7 @@ body {
   position: relative;
   overflow: hidden;
   outline: none;
+  background: #fff;
 }
 
 .landing-muebles main.main-container .comedor-row .slider-products .product-link .product-photo img {
@@ -419,6 +432,7 @@ section.organizadores > .organizador-row img {
 
 section.organizadores > .organizador-row .image-section {
   position: relative;
+  width: 100%;
 }
 
 section.organizadores > .organizador-row .s_one .title-caption, section.organizadores > .organizador-row .s_two .title-caption, section.organizadores > .organizador-row .s_three .title-caption {
@@ -501,13 +515,14 @@ section.organizadores > .organizador-row .btn-special:hover, .landing-muebles ma
   display: none;
   background: #56b9b4;
   color: #fff;
-  font-size: 11px;
-  width: 40px;
-  height: 50px;
+  font-size: 30px;
+  width: 38px;
+  height: 40px;
   position: fixed;
   bottom: 20px;
   right: 20px;
   text-decoration: none;
+  text-align: center;
 }
 
 
